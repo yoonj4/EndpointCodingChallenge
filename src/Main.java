@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+// Accepts a file path as input and executes all of the FileSystem commands in the file.
 public class Main {
 
     // args should only contain one element which is the file name containing the commands to run.

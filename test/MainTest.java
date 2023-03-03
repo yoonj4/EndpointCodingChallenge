@@ -48,41 +48,42 @@ public class MainTest {
     public void testMainRunsMultipleCommands() {
         String[] args = new String[1];
         args[0] = "bin/test/data/commands.txt";
+        
         Main.main(args);
-        String expected = "CREATE fruits\n" +
-        "CREATE vegetables\n" +
-        "CREATE grains\n" +
-        "CREATE fruits/apples\n" +
-        "CREATE fruits/apples/fuji\n" +
-        "LIST\n" +
-        "fruits\n" +
-        "  apples\n" +
-        "    fuji\n" +
-        "grains\n" +
-        "vegetables\n" +
-        "CREATE grains/squash\n" +
-        "MOVE grains/squash vegetables\n" +
-        "CREATE foods\n" +
-        "MOVE grains foods\n" +
-        "MOVE fruits foods\n" +
-        "MOVE vegetables foods\n" +
-        "LIST\n" +
-        "foods\n" +
-        "  fruits\n" +
-        "    apples\n" +
-        "      fuji\n" +
-        "  grains\n" +
-        "  vegetables\n" +
-        "    squash\n" +
-        "DELETE fruits/apples\n" +
-        "Cannot delete fruits/apples - fruits does not exist\n" +
-        "DELETE foods/fruits/apples\n" +
-        "LIST\n" +
-        "foods\n" +
-        "  fruits\n" +
-        "  grains\n" +
-        "  vegetables\n" +
-        "    squash\n";
-        assertEquals(expected, outContent.toString());
+
+        assertEquals("CREATE fruits", outContent.toString().split(System.getProperty("line.separator"))[0]);
+        assertEquals("CREATE vegetables", outContent.toString().split(System.getProperty("line.separator"))[1]);
+        assertEquals("CREATE grains", outContent.toString().split(System.getProperty("line.separator"))[2]);
+        assertEquals("CREATE fruits/apples", outContent.toString().split(System.getProperty("line.separator"))[3]);
+        assertEquals("CREATE fruits/apples/fuji", outContent.toString().split(System.getProperty("line.separator"))[4]);
+        assertEquals("LIST", outContent.toString().split(System.getProperty("line.separator"))[5]);
+        assertEquals("fruits", outContent.toString().split(System.getProperty("line.separator"))[6]);
+        assertEquals("  apples", outContent.toString().split(System.getProperty("line.separator"))[7]);
+        assertEquals("    fuji", outContent.toString().split(System.getProperty("line.separator"))[8]);
+        assertEquals("grains", outContent.toString().split(System.getProperty("line.separator"))[9]);
+        assertEquals("vegetables", outContent.toString().split(System.getProperty("line.separator"))[10]);
+        assertEquals("CREATE grains/squash", outContent.toString().split(System.getProperty("line.separator"))[11]);
+        assertEquals("MOVE grains/squash vegetables", outContent.toString().split(System.getProperty("line.separator"))[12]);
+        assertEquals("CREATE foods", outContent.toString().split(System.getProperty("line.separator"))[13]);
+        assertEquals("MOVE grains foods", outContent.toString().split(System.getProperty("line.separator"))[14]);
+        assertEquals("MOVE fruits foods", outContent.toString().split(System.getProperty("line.separator"))[15]);
+        assertEquals("MOVE vegetables foods", outContent.toString().split(System.getProperty("line.separator"))[16]);
+        assertEquals("LIST", outContent.toString().split(System.getProperty("line.separator"))[17]);
+        assertEquals("foods", outContent.toString().split(System.getProperty("line.separator"))[18]);
+        assertEquals("  fruits", outContent.toString().split(System.getProperty("line.separator"))[19]);
+        assertEquals("    apples", outContent.toString().split(System.getProperty("line.separator"))[20]);
+        assertEquals("      fuji", outContent.toString().split(System.getProperty("line.separator"))[21]);
+        assertEquals("  grains", outContent.toString().split(System.getProperty("line.separator"))[22]);
+        assertEquals("  vegetables", outContent.toString().split(System.getProperty("line.separator"))[23]);
+        assertEquals("    squash", outContent.toString().split(System.getProperty("line.separator"))[24]);
+        assertEquals("DELETE fruits/apples", outContent.toString().split(System.getProperty("line.separator"))[25]);
+        assertEquals("Cannot delete fruits/apples - fruits does not exist", outContent.toString().split(System.getProperty("line.separator"))[26]);
+        assertEquals("DELETE foods/fruits/apples", outContent.toString().split(System.getProperty("line.separator"))[27]);
+        assertEquals("LIST", outContent.toString().split(System.getProperty("line.separator"))[28]);
+        assertEquals("foods", outContent.toString().split(System.getProperty("line.separator"))[29]);
+        assertEquals("  fruits", outContent.toString().split(System.getProperty("line.separator"))[30]);
+        assertEquals("  grains", outContent.toString().split(System.getProperty("line.separator"))[31]);
+        assertEquals("  vegetables", outContent.toString().split(System.getProperty("line.separator"))[32]);
+        assertEquals("    squash", outContent.toString().split(System.getProperty("line.separator"))[33]);
     }
 }
