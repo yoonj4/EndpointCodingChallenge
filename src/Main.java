@@ -1,3 +1,5 @@
+package src;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -17,9 +19,10 @@ public class Main {
         Scanner scanner;
         try {
             scanner = new Scanner(commands);
+            FileSystem fileSystem = new FileSystem();
             while(scanner.hasNextLine()) {
                 String command = scanner.nextLine();
-                System.out.println(command);
+                fileSystem.executeCommand(command);
             }
 
             scanner.close();
